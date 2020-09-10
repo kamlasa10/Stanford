@@ -1,0 +1,40 @@
+extends ../layout/main
+block variable
+	-
+		var title_page = 'Документи'
+		var id_page = 'documents-page'
+		var class_page = 'dark'
+		var breadcrumbsSubitem = false
+	
+block meta
+	title= title_page
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+	script(defer src='./assets/scripts/index.js')
+block content
+	.documents-content
+		+svg('circ_logo').documents-content-circ_logo
+		include ../includes/breadcrumbs.pug
+		.doc-list-wrap
+			.doc-list
+				each v in [1,1,1,1,1]
+					a(href="#" download).doc-item
+						.doc-item__ico
+							+svg('doc')
+						h4.doc-item__title Дозвіл на будівництво
+						.doc-item-wrap
+							.doc-item__time 21.09.2019
+							+svg('download')
+				a(href="#").doc-item.dark-theme-link
+					span.dark-theme-link__text Дізнатись про
+						br
+						| девелопера
+					+svg('arrow').dark-theme-link__ico
+block footer
+	include ../includes/footer.pug
+			
+
+block header
+

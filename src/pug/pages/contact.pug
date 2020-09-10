@@ -1,0 +1,47 @@
+extends ../layout/main
+block variable
+	-
+		var title_page = 'Контакти'
+		var id_page = 'contact-page'
+		var class_page = 'dark'
+		var breadcrumbsSubitem = false
+	
+block meta
+	title= title_page
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+	script(defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCvIwpQlmn08p4nR3bND8v3PBuMrWNMsZM&sensor=false&ver=1.23')
+	script(defer src='./assets/scripts/index.js')
+	script(defer src='./assets/scripts/contact.js')
+block content
+	.contact-content
+		include ../includes/breadcrumbs.pug
+		.contact-content-block
+			.contact-content-block_l
+				h2.contact__title Відділ продажів
+				.contact-info-block
+					.contact-info-block-title Адреса
+					.contact-info-block-text Київ, вул. Предславинська, 35
+				.contact-info-block
+					.contact-info-block-title Контакти
+					.contact-info-block-wrap.contact-info-block-wrap--row.contact-info-block-wrap-tel
+						a(href="tel:1234567890").contact-info-block-text +3 044 299 4600
+						a(href="tel:1234567890").contact-info-block-text +38 093 299 4600
+						a(href="#") Viber
+				.contact-info-block
+					.contact-info-block-title Режим роботи
+					.contact-info-block-wrap.contact-info-block-wrap--column.contact-info-block-wrap--margin-bottom
+						.contact-info-block-text Пн-Пт: 9:00 - 20:00
+						.contact-info-block-text Сб-Вс: 10:00 - 16:00
+				a(href="#").underline_2.contact-info-block-google-map відкрити гугл карти
+
+			.contact-content-block_r
+				#map-contact
+
+block footer
+	include ../includes/footer.pug
+
+block header
+

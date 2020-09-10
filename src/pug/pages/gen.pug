@@ -1,0 +1,33 @@
+extends ../layout/main
+block variable
+	-
+		var title_page = 'План комплексу'
+		var id_page = 'gen-page'
+		var breadcrumbsBtn = 'filter'
+		var breadcrumbsSubitem = [
+		]
+		
+block meta
+	title Підбір по параметрам
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+	script(defer src='./assets/scripts/index.js')
+	script(defer src='./assets/scripts/.js')
+block content
+	.gen-content
+		include ../includes/breadcrumbs.pug
+		.gen-block
+			.gen-plan__img
+				.genplan__info.genplan__info1 вул. Василя Тютюнника
+				.genplan__info.genplan__info2 вул. Євгена Коновальця
+				include ../includes/mini-plan-section.svg
+				.genplan__info.genplan__info3 вул. Предславинська
+			.section-compass
+				+img('compass.svg').section-compass__img
+block footer
+	include ../includes/footer.pug
+
+block header
+

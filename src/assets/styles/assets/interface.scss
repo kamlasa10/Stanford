@@ -1,0 +1,164 @@
+.row {
+	@include row-flex();
+}
+.page__inner {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	z-index: 30;
+	.page__content {
+		flex-grow: 1;
+	}
+	.page__footer-wrapper {
+		flex-shrink: 0;
+	}
+}
+.section-pading--top {
+	padding-top: 60px;
+}
+
+
+.radio-block{
+	margin-bottom: 50px;
+	@include to(1440px){
+		margin-bottom: 30px;
+
+	}
+	[type="radio"]:checked,
+	[type="radio"]:not(:checked) {
+		position: absolute;
+		left: -9999px;
+	}
+
+	[type="radio"]:checked+label,
+	[type="radio"]:not(:checked)+label {
+		position: relative;
+		padding-left: 24px;
+		cursor: pointer;
+		line-height: 1em;
+		display: flex;
+		align-items: center;
+		font-weight: 400;
+		font-size: min(vw(27), 27px);
+		color: #FFF0E0;
+		@include to(1440px){
+			font-size: 20px;
+
+		}
+		@include to(1280px) {
+			font-size: 18px;
+		}
+		@include to(768px) {
+			font-size: 16px;
+		}
+		@include to(576px) {
+			font-size: 14px;
+		}
+	}
+
+	
+	[type="radio"]:checked+label:before,
+	[type="radio"]:not(:checked)+label:before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 50%;
+		width: 15px;
+		height: 15px;
+		border: 1px solid #CE8163;
+		border-radius: 100%;
+		background: transparent;
+		transform: scale(1) translateY(-50%);
+		@include to(1440px){
+			width: 10px;
+			height: 10px;
+			
+		}
+	}
+	
+	[type="radio"]:not(:checked)+label:before {
+		border: 1px solid #9F9999;
+
+	}
+	[type="radio"]:checked+label:after,
+	[type="radio"]:not(:checked)+label:after {
+		content: '';
+		width: 7px;
+		height: 7px;
+		background: #CE8163;
+		position: absolute;
+		top: 50%;
+		left: 2px;
+		border-radius: 100%;
+		-webkit-transition: all 0.2s ease;
+		transform: scale(0) translateY(-50%) translateX(0px);
+		transition: all 0.2s ease;
+		@include to(1440px){
+			width: 5px;
+			height: 5px;
+			transform: scale(0) translateY(-50%) translateX(0%);
+
+		}
+	}
+
+	[type="radio"]:not(:checked)+label:after {
+		opacity: 0;
+		-webkit-transform: scale(0);
+		transform: scale(0);
+	}
+
+	[type="radio"]:checked+label:after {
+		opacity: 1;
+		-webkit-transform: scale(1) translateY(-50%) translateX(24%);
+		transform: scale(1) translateY(-50%) translateX(24%);
+		@include to(1440px){
+			-webkit-transform: scale(1) translateY(-50%) translateX(8%);
+			transform: scale(1) translateY(-50%) translateX(8%);
+
+		}
+	}
+}
+
+
+.underline{
+	position: relative;
+	&::after{
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		height: 1px;
+		width: 100%;
+		background-color: #2F2536;
+		display: flex;
+		content: "";
+		transform: scaleX(0);
+		transition: transform cubic-bezier(0.2, 1.82, 0.14, 1.12) 0.3s;
+	}
+	&:hover{
+		&::after{
+			transform: scaleX(1);
+		}
+		
+	}
+}
+.underline_2{
+	position: relative;
+	&::before{
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		height: 0.5px;
+		width: 100%;
+		background-color: #2F2536;
+		display: flex;
+		content: "";
+		transform: scaleX(0);
+		transition: transform cubic-bezier(0.2, 1.82, 0.14, 1.12) 0.3s;
+	}
+	&:hover{
+		&::before{
+			transform: scaleX(1);
+		}
+		
+	}
+}

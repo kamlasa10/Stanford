@@ -1,0 +1,111 @@
+extends ../layout/main
+block variable
+	-
+		var title_page = 'Інфраструктура'
+		var id_page = 'infrastructure-page'
+		var breadcrumbsBtn = 'gal'
+		var breadcrumbsSubitem = false
+	
+block meta
+	title= title_page
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+	script(defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCvIwpQlmn08p4nR3bND8v3PBuMrWNMsZM&sensor=false&ver=1.23')
+
+	script(defer src='./assets/scripts/index.js')
+	script(defer src='./assets/scripts/infrastructure.js')
+block content
+	.infrastructure-content
+		include ../includes/breadcrumbs.pug
+		.infrastructure-block
+			.js-infrastructure-block.infrastructure-block-map
+			.infra__box
+				button(type="button").js-infrastructure__list-btn.infrastructure__list-btn
+					span Об’єкти інфраструктури
+					+svg('arr_inf')
+				ul.custom-scroll.js-infrastructure-nav-list.infrastructure-nav-list
+					li.mark-item(data-category="all")
+						+svg('eye')
+						span.mark-item__icon(style="max-width: 25px; min-width: auto;")
+							<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJDYXBhXzEiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDUxNS41NTYgNTE1LjU1NiIgaGVpZ2h0PSI1MTIiIHZpZXdCb3g9IjAgMCA1MTUuNTU2IDUxNS41NTYiIHdpZHRoPSI1MTIiPjxnPjxwYXRoIGQ9Im0wIDI3NC4yMjYgMTc2LjU0OSAxNzYuODg2IDMzOS4wMDctMzM4LjY3Mi00OC42Ny00Ny45OTctMjkwLjMzNyAyOTAtMTI4LjU1My0xMjguNTUyeiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojOUE5NTlFIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPjwvZz4gPC9zdmc+"/>
+						span.mark-item__text
+							| Показати все
+					li.mark-item(data-category="sport")
+						+svg('eye')
+						span.mark-item__icon
+							i.flaticon-gym
+						span.mark-item__text
+							| Спортивные комплексы
+					li.mark-item(data-category="market")
+						+svg('eye')
+						span.mark-item__icon
+							i.flaticon-shopping-store-cart
+						span.mark-item__text
+							| Супермаркеты
+					li.mark-item(data-category="shop")
+						+svg('eye')
+						span.mark-item__icon
+							i.flaticon-shopping-purse-icon
+						span.mark-item__text
+							| Торговые центры
+					li.mark-item(data-category="univercity")
+						+svg('eye')
+						span.mark-item__icon
+							i.flaticon-college-graduation
+						span.mark-item__text
+							| Высшие учебные заведения
+					li.mark-item(data-category="school")
+						+svg('eye')
+						span.mark-item__icon
+							i.flaticon-university-campus
+						span.mark-item__text
+							| Школы
+					li.mark-item(data-category="medicine")
+						+svg('eye')
+						span.mark-item__icon
+							i.flaticon-pharmacy-sign
+						span.mark-item__text
+							| Аптеки
+					li.mark-item(data-category="bank")
+						+svg('eye')
+						span.mark-item__icon
+							i.flaticon-american-dollar-symbol
+						span.mark-item__text
+							| Банки
+					li.mark-item(data-category="cafe")
+						+svg('eye')
+						span.mark-item__icon
+							i.flaticon-plate-fork-and-knife
+						span.mark-item__text
+							| Кафе и рестораны
+					li.mark-item(data-category="kinder")
+						+svg('eye')
+						span.mark-item__icon
+							i.flaticon-toy
+						span.mark-item__text
+							| Детские магазины
+					li.mark-item(data-category="dentistry")
+						+svg('eye')
+						span.mark-item__icon
+							i.flaticon-tooth
+						span.mark-item__text
+							| Стоматологии
+					li.mark-item(data-category="theater")
+						+svg('eye')
+						span.mark-item__icon
+							i.fas.fa-theater-masks
+						span.mark-item__text Культура
+					li.mark-item(data-category="metro")
+						+svg('eye')
+						span.mark-item__icon
+							i.metro
+						span.mark-item__text Метро
+				
+
+block footer
+	include ../includes/footer.pug
+
+block header
+

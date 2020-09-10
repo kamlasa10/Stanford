@@ -1,0 +1,171 @@
+
+#gallery-page {
+	.section-footer:not(#Y) {
+		position: relative;
+		max-width: none;
+	}
+	
+	.footer-logo {
+		display: none;
+		@include to(1440px){
+			display: flex;
+
+		}
+	}
+	.section-footer__logo{
+		margin-right: 5%;
+	}
+
+}
+
+
+#gallery-page .breadcrumbs {
+	margin: 0 0 18px 0;
+	padding-right: 45px;
+	@include to(576px){
+		padding: 0 20px;
+	}
+}
+
+.gallery-content {
+	transition: all 0.4s;
+	margin-left: 66px;
+	padding: 120px 0px 0 0px;
+	
+	@include to(1020px) {
+		margin-left: 0px;
+		padding: 120px 20px 0;
+	}
+	
+	@include to(576px) {
+		padding: 80px 0px 0;
+	box-shadow: 11px 1px 30px rgba(177, 177, 177, 0.37);
+
+	}
+}
+.gallery-main-slider{
+	width: 100%;
+	&__item{
+		overflow: hidden;
+		img{
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+}
+.gallery-block,
+.gallery-main-slider__item {
+	height: calc(100vh - 232px);
+	display: flex;
+	cursor: pointer;
+	width: 100%;
+	@include to(1020px){
+		height: 500px;
+	}
+	@include to(576px){
+		height: 400px;
+		margin-bottom: 47px;
+	}
+}
+
+.gallery-block{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	@include to(1020px){
+		height: auto;
+
+	}
+}
+.gallery-mini-slider{
+	position: absolute;
+	bottom: -70px;
+	right: 0;
+	width: calc(53% + 0px);
+	z-index: 11;
+	@include to(1020px){
+		margin-top: -15px;
+		position: static;
+		width: 100%;
+		transform: translateX(52.5px);
+	}
+	@include to(576px){
+		display: none;
+	}
+	&__item:not(.slick-current) {
+		transition: all 0.3s;
+		padding: 15px 7.5px 0;
+
+	}
+	&__item{
+		transition: all 0.3s;
+		padding: 0 7.5px;
+		width: 235px;
+		height: 139px;
+		@include to(1440px){
+			width: 153px;
+			height: 97px;
+
+		}
+		img{
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+}
+
+.gallery-sl-arrows{
+	z-index: 12;
+	flex-direction: row;
+	bottom: 0;
+	right: calc(53% - 7.5px);
+	transform: translate(50%, 50%);
+	@include to(1020px){
+		transform: translate(0%, 100%);
+		left: 0;
+		bottom: 97px;
+		right: auto;
+	}
+	@include to(576px){
+		bottom: 0;
+		transform: translate(0%, 0%);
+	}
+}
+
+
+.gallery-block {
+
+	.slick-dots {
+		position: absolute;
+		z-index: 31;
+		bottom: 5px;
+		right: 0;
+		width: calc(100% - 94px);
+		height: 47px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		li {
+			margin: 0 8px;
+		}
+
+		button {
+			padding: 0;
+
+			width: 8px;
+			height: 8px;
+			min-width: 8px;
+			min-height: 8px;
+			border-radius: 50%;
+			background: #9A959E;
+			border: none;
+			opacity: 0.5;
+			font-size: 0;
+		}
+
+		li.slick-active button {
+			opacity: 1;
+		}
+	}
+}

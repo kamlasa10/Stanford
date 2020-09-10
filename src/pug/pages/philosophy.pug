@@ -1,0 +1,110 @@
+extends ../layout/main
+block variable
+	-
+		var title_page = 'Філософія Stanford'
+		var id_page = 'philosophy-page'
+		var breadcrumbsBtn = 'philosophy'
+		var breadcrumbsSubitem = false
+		var data = [
+			{
+				title: 'Архітектура нового світу',
+				text: ['Stanford - це сучасний будинок, який має амбіції стати легендою, функціональною класикою, новою архітектурною домінантою Печерська на одній хвилі з раціональним підходом до організації житлового простору.', 'Архітекторів надихнули образи інтелектуальної Америки - квінтесенція свободи і розвитку, стриманості і елегантності. Це відображення особливого способу життя за зразком світових проектів, що поєднують функціональність з естетикою класицизму.'],
+				num: '01',
+				num_nav: '02',
+			},
+			{
+				title: 'Преміальна локація',
+				num: '02',
+				num_nav: '03',
+				text: ["Житловий комплекс Stanford знаходиться на перетині вулиць Предславинської та Коновальця, неподалік від Національного палацу мистецтв «Україна» і Костелу Святого Миколая. Майже до всіх історичних і культурних об'єктів від ЖК Stanford можна дістатися за 10 хвилин.", 'Витонченість, шляхетність, відмінна транспортна доступність - три кити Печерську, відомого своїми елітними житловими будинками, престижними закладами, насиченою інфраструктурою. Тут поєднуються затишок зелених вулиць, енергія ділового і лоск світського життя.'],
+			},
+			{
+				title: 'Ландшафтний парк',
+				text: ['Stanford - це сучасний будинок, який має амбіції стати легендою, функціональною класикою, новою архітектурною домінантою Печерська на одній хвилі з раціональним підходом до організації житлового простору.', 'Архітекторів надихнули образи інтелектуальної Америки - квінтесенція свободи і розвитку, стриманості і елегантності. Це відображення особливого способу життя за зразком світових проектів, що поєднують функціональність з естетикою класицизму.'],
+				num: '03',
+				num_nav: '04',
+			},
+			{
+				title: 'Поліфункціональний житловий простір на Печерську',
+				text: ['Stanford має саме таку інфраструктуру, що дарує свободу насолоджуватися життям. Якісний відпочинок, зручний спорт та абсолютно щасливе дитинство у серці європейської столиці – це золотий стандарт переваг доступних мешканцям Stanford.', 'Власникам квартир достатньо лише натиснути кнопку ліфта, щоб дістатися фітнес-зали, відвести дітей на заняття або потрапити на ділову зустріч. Особливий ритм життя – це коли продумане до дрібниць інфраструктурне наповнення дозволяє бути активним, займатися улюбленими справами, приділяти більше часу родині.'],
+				num: '04',
+				num_nav: '05',
+			},
+			{
+				title: 'Консьєрж-сервіс',
+				text: ['Мешканцям будинку забезпечується цілодобовий сервіс на рівні кращих світових готелів. Для вирішення побутових питань по оплаті комунальних платежів, замовленню продуктів, пошуку персоналу для дому тут існує власний консьєрж-сервіс класу luxe.'],
+				num: '05',
+				num_nav: '06',
+			},
+			{
+				title: 'Абсолютна безпека',
+				text: ['Затишна територія будинку забезпечена цілодобовою охороною, системами контролю доступу і відеоспостереження.'],
+				num: '06',
+				num_nav: '07',
+			},
+			{
+				title: 'Преміальний сервіс для автовласників',
+				text: ['Stanford на Печерську забезпечує кращий та екологічний спосіб зберігання особистого автотранспорту. Багатоярусний паркувальний простір – не просто атрибут преміального житла, а виключно практичне рішення для автопарку сучасних городян.'],
+				num: '07',
+				num_nav: '',
+			},
+		]
+	
+block meta
+	title= title_page
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+	script(defer src='./assets/scripts/index.js')
+	script(defer src='./assets/scripts/philosophy.js')
+block content
+	.filo-transition.filo-transition__overlay
+		
+
+	.philosophy-content
+		include ../includes/breadcrumbs.pug
+
+		.philosophy-block-wrap
+			each v, i in data
+				if i == 6
+					.philosophy-block(data-filo_sec= i)
+						+img('filo/sign.svg').philosophy-content-sign
+						button(type="button").philosophy-content-nav.philosophy-content-nav-btn.js-philosophy-content-nav-btn
+							+svg('arrow-fil').philosophy-content-nav__arrow
+							span.philosophy-content-nav__text= v.num_nav
+
+						.philosophy-block__l
+							span.philosophy__cnt= v.num
+							h3.philosophy__title= v.title
+							each vv in v.text
+								p.philosophy__text= vv
+						.philosophy-block__r
+							.philosophy__img
+								.philosophy-img-overlay__l.philosophy-img-overlay
+								.philosophy-img-overlay__r.philosophy-img-overlay
+								+img('filo/'+i+'.jpg')
+				else
+					.philosophy-block(data-filo_sec= i)
+						+img('filo/sign.svg').philosophy-content-sign
+						.philosophy-content-nav
+							+svg('arrow-fil').js-philosophy-content-nav__arrow.philosophy-content-nav__arrow
+							span.js-philosophy-content-nav__text.philosophy-content-nav__text= v.num_nav
+
+						.philosophy-block__l
+							span.philosophy__cnt= v.num
+							h3.philosophy__title= v.title
+							each vv in v.text
+								p.philosophy__text= vv
+						.philosophy-block__r
+							.philosophy__img
+								.philosophy-img-overlay__l.philosophy-img-overlay
+								.philosophy-img-overlay__r.philosophy-img-overlay
+								+img('filo/'+i+'.jpg')
+
+							
+block footer
+	include ../includes/footer.pug
+
+block header
+

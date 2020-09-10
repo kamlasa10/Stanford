@@ -1,0 +1,198 @@
+/**********************************/
+/*
+* documents start
+*/
+#documents-page {
+	.section-footer:not(#Y) {
+		position: relative;
+		max-width: none;
+	}
+
+	.footer-logo {
+		display: flex;
+	}
+}
+
+
+#documents-page .breadcrumbs {
+	margin: 0 0 68px 0;
+
+	@include to(768px) {
+		margin: 0 0 68px 0;
+
+	}
+	@include to(576px) {
+		margin: 0 0 44px 0;
+	}
+	@include from(1441px){
+		margin: 0 0 90px 0;
+
+	}
+}
+
+.documents-content {
+	transition: all 0.4s;
+	margin-left: 74px;
+	padding: 120px 45px 0 0px;
+
+	@include to(1020px) {
+		margin-left: 0px;
+		padding: 120px 20px 0;
+	}
+
+	@include to(576px) {
+		padding: 80px 20px 0;
+	}
+}
+
+
+.doc-list{
+	display: flex;
+	flex-wrap: wrap;
+	&-wrap{
+		padding: 0 11% 0;
+		@include to(1020px){
+			padding: 0 0% 0;
+
+		}
+	}
+	
+}
+
+.doc-item{
+	padding-right: 18.5%;
+	margin: 0 0 36px;
+	width: 33.33%;
+	display: flex;
+	flex-direction: column;
+	text-decoration: none;
+	@include to(1440px){
+		margin: 0 0 17px;
+		padding-right: 15%;
+	}
+	@include to(1440px){
+		margin: 0 0 47px;
+	}
+	@include to(576px){
+		width: 50%;
+		margin: 0 0 27px;
+	}
+	&:last-child{
+		
+	}
+	&__ico{
+		margin-bottom: 15px;
+		@include to(1440px){
+			margin-bottom: 0;
+		}
+		svg{
+			
+			width: 80px;
+			height: 100px;
+			@include to(1440px){
+				width: 64px;
+				height: 80px;
+
+			}
+			@include to(576px){
+				width: 57px;
+				height: 71px;
+
+			}
+		}
+	}
+	&__title{
+		padding-bottom: 15px;
+		font-size: min(vw(28), 28px);
+		line-height: lh(40, 28);
+		font-family: $default-font2;
+		color: #FFF0E0;
+		border-bottom: 1.44px solid #42344A;
+		@include to(1440px){
+			font-size: 22px;
+			line-height: lh(32, 22);
+		}
+		@include to(576px){
+			font-size: 20px;
+			line-height: lh(30, 20);
+		}
+	}
+	&__time{
+		font-size: 14px;
+		line-height: lh(30, 14);
+
+		text-transform: uppercase;
+
+		color: #9A959E;
+		@include to(1440px){
+			font-size: 12px;
+		}
+	}
+	&-wrap{
+		margin: 17px 0 32px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		@include to(1440px){
+			margin: 9px 0 32px;
+
+		}
+		svg{
+			width: 17px;
+			height: 20px;
+		}
+	}
+}
+
+.dark-theme-link{
+	padding-right: 0;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	@include to(576px){
+		width: 100%; 
+	}
+	&__text{
+		margin-right: 25px;
+		font-family: $default-font2;
+		font-size: min(vw(20), 20px);
+		line-height: lh(30, 20);
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: #CE8163;
+		@include to(1440px){
+			margin-right: 15px;
+			font-size: 16px;
+		}
+	}
+	&__ico{
+		fill: #FFF0E0;
+		stroke: #FFF0E0;
+		height: 11px;
+		width: 34.5px;
+	}
+}
+.documents-content-circ_logo{
+	position: absolute;
+	top: 50%;
+	right: 0%;
+	width: min(vw(300), 300px);
+	height: min(vw(300), 300px);
+	transform: translate(20%, -50%);
+	fill: #382D42;
+	@include to(1280px){
+		width: 200px;
+		height: 200px;
+
+	}
+	@include to(768px){
+		top: 80%;
+	}
+	@include to(666px){
+		display: none;
+	}
+}
+/*
+* documents end
+*/
+/**********************************/

@@ -1,0 +1,31 @@
+extends ../layout/main
+block variable
+    -
+        var title_page = 'Веб-Камера'
+        var id_page = 'video-page'
+        var breadcrumbsBtn = 'web-camera'
+        var breadcrumbsSubitem = false
+
+block meta
+    title= title_page
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+    script(defer src='./assets/scripts/index.js')
+block content
+    .video-content
+        include ../includes/breadcrumbs.pug
+        div(class="video-block camera-block")
+            .b-lazy.iv-embed.b-error(style='margin:0 auto;padding:0;border:0;width:642px;')
+                .b-lazy.iv-v.b-error(style='display:block;margin:0;padding:1px;border:0;background:#000;')
+                    iframe.b-lazy.iv-i.b-loaded(style='display:block;margin:0;padding:0;border:0;' width='640' height='493' frameborder='0' allowfullscreen='' src='https://open.ivideon.com/embed/v2/?server=100-iTiXYJ51IaDVedkMV8luPI&camera=196608&width=&height=&lang=ru')
+                .b-lazy.iv-b.b-error(style='display:block;margin:0;padding:0;border:0;')
+                    div(style='clear:both;height:0;overflow:hidden;') &nbsp;
+                    script.b-lazy(data-src='https://open.ivideon.com/embed/v2/embedded.js').
+
+block footer
+    include ../includes/footer.pug
+
+block header
+

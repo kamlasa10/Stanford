@@ -1,0 +1,63 @@
+// desktop header start
+.desktop-header
+	.desktop-header-logo
+		a(href="/").desktop-header-logo-wrap
+			include ../../assets/images/nav-logo.svg
+	a(href="tel:+30442994600").desktop-header-phone.phone-link.phone-link-color--dark
+		.desktop-header-phone__icon.phone-link__icon
+			include ../../assets/images/icon-phone.svg
+		span.desktop-header-phone__text.phone-link__text +3 044 299 4600
+// desktop header end
+// mobile header start
+.mobile-nav
+	a(href="/").mobile-nav-logo
+		include ../../assets/images/nav-logo.svg
+	.mobile-nav-wrap
+		.mobile-phone-wrap
+			a(href="tel:+30442994600").desktop-header-phone.phone-link.phone-link-color--white
+				.desktop-header-phone__icon.phone-link__icon
+					include ../../assets/images/icon-phone.svg
+				span.desktop-header-phone__text.phone-link__text +3 044 299 4600
+			button(type="button").call-link.js-call-popup.button-reset--default-styles
+				span.call-link__text замовити дзвінок
+		.lang-list-vertical-wrap
+			ul.lang-list-vertical
+				li.lang-list-vertical__item.lang-list__item--active
+					a(href='#') укр
+				li.lang-list-vertical__item
+					a(href='#') рус
+				li.lang-list-vertical__item.active
+					a(href='#') eng
+			+svg('arr')
+		button(type="button").mobile-nav__btn.button-reset--default-styles.js-menu-btn
+			+svg('menu_mob')
+// mobile header end
+// desktop navigation start
+.desktop-nav
+	button(type="button").js-menu-btn.button.button-reset--default-styles.nav-menu-button
+		svg(width="29" height="19" viewbox="0 0 29 19" fill="none" xmlns="http://www.w3.org/2000/svg").nav-menu-button__icon
+			line(x1="4" y1="0.5" x2="25" y2="0.5" )
+			line(x1="4" y1="5.5" x2="25" y2="5.5" )
+			line(x1="4" y1="10.5" x2="16" y2="10.5" stroke="#CE8163")
+		span.nav-menu-button-wrap
+			span.nav-menu-button__text меню
+	.desktop-nav-icon-wrap
+		a(href="#").button.button-reset--default-styles.desktop-nav-btn.nav-btn--margin.js-call-popup
+			+svg('phone').desktop-nav-btn__icon
+			.desktop-nav-btn-text-wrap
+				span замовити дзвінок
+		a(href="#").button.button-reset--default-styles.desktop-nav-btn.nav-btn--margin
+			+svg('keys').desktop-nav-btn__icon
+			.desktop-nav-btn-text-wrap
+				span обрати квартиру
+		.lang.nav-btn--margin
+			ul.lang-list
+				li.lang-list__item.lang-list__item--active
+					a(href='#') укр
+				li.lang-list__item
+					a(href='#') рус
+				li.lang-list__item
+					a(href='#') eng
+// desktop navigation end
+
+

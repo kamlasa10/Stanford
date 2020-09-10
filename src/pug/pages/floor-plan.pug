@@ -1,0 +1,116 @@
+extends ../layout/main
+block variable
+	-
+		var title_page = 'План поверху'
+		var id_page = 'floor-plan-page'
+		var breadcrumbsBtn = 'filter'
+		var breadcrumbsSubitem = [
+			{
+				label: 'Вибір за секції',
+				link: pagesLink[0].gen
+			}
+		]
+	
+block meta
+	title= title_page
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+	script(defer src='./assets/scripts/index.js')
+	script(defer src='./assets/scripts/floor-plan.js')
+block content
+	.mobile-popup-flat-info-overlay.js-mobile-popup-flat-info
+		.mobile-popup-flat-info
+			button(type="button").arrow-close.js-mobile-popup-flat-info-close
+				+svg('close_2')
+			ul.popup-floor-info.js-floor-info
+				li.floor-info-item
+					span.floor-info-item__key Квартира №
+					span.floor-info-item__val.js-flat-num 136
+				li.floor-info-item
+					span.floor-info-item__key Загальна площа м
+						span.sup 2
+					span.floor-info-item__val.mt_1.js-flat-total_square 41,7
+				li.floor-info-item
+					span.floor-info-item__key Кімнат
+					span.floor-info-item__val.js-flat-room 2
+				li.floor-info-item
+					span.floor-info-item__key Житлова площа м
+						span.sup 2
+					span.floor-info-item__val.mt_1.js-flat-life_square 44,2
+			a(href= pagesLink[0].floorPlan).js-mobile-popup-flat-info__link.mobile-popup-flat-info-link
+				span дивитись кваритру
+				+svg('arrow--white').arrow--white
+	.floor-plan-content
+		include ../includes/breadcrumbs.pug
+		.filter-plan-block
+			.filter-plan-block__l
+				.section-title
+					.section-title__num 4
+					.section-title__text секція
+				.section-plan
+					.section-plan__img
+						include ../includes/mini-plan-section.svg
+					.section-plan__text вул. Предславинська
+				.section-compass
+					+img('compass.svg').section-compass__img
+			.filter-plan-block__c
+				include ../includes/plan-floor.svg
+
+			.filter-plan-block__r
+				.filter-plan__inner-wrap
+					h3.filter-plan__title План поверху
+					.filter-plan__wrap
+						a(href="#" class="filter-plan__item filter-plan__item--active")
+							span.filter-plan__number 2
+							span.filter-plan__type Нетиповий
+						a(href="#" class="filter-plan__item")
+							span.filter-plan__number 3
+							span.filter-plan__type Нетиповий
+						a(href="#" class="filter-plan__item")
+							span.filter-plan__number 4-9
+							span.filter-plan__type типовий поверх
+						a(href="#" class="filter-plan__item")
+							span.filter-plan__number 10-13
+							span.filter-plan__type типовий поверх
+						a(href="#" class="filter-plan__item")
+							span.filter-plan__number 14
+							span.filter-plan__type Нетиповий
+						a(href="#" class="filter-plan__item")
+							span.filter-plan__number 15
+							span.filter-plan__type Нетиповий
+						a(href="#" class="filter-plan__item")
+							span.filter-plan__number 16
+							span.filter-plan__type Нетиповий
+						a(href="#" class="filter-plan__item")
+							span.filter-plan__number 17-18
+							span(class="filter-plan__type filter-plan__type-nowrap") 2х рівніві квартири
+				ul.floor-info.js-floor-info
+					li.floor-info-item
+						span.floor-info-item__key Квартира №
+						span.floor-info-item__val.js-flat-num 136
+					li.floor-info-item
+						span.floor-info-item__key Загальна площа м
+							span.sup 2
+						span.floor-info-item__val.mt_1.js-flat-total_square 41,7
+					li.floor-info-item
+						span.floor-info-item__key Кімнат
+						span.floor-info-item__val.js-flat-room 2
+					li.floor-info-item
+						span.floor-info-item__key Житлова площа м
+							span.sup 2
+						span.floor-info-item__val.mt_1.js-flat-life_square 44,2
+		a(href="#").see-more-floor.js-see-more-floor
+			span.see-more-floor__text дивитись квартиру
+			+svg('arrow').see-more-floor__icon
+
+block footer
+	include ../includes/footer.pug
+
+					
+					
+
+
+block header
+

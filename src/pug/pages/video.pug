@@ -1,0 +1,33 @@
+extends ../layout/main
+block variable
+	-
+		var title_page = 'Відео'
+		var id_page = 'video-page'
+		var breadcrumbsBtn = 'filter'
+		var breadcrumbsSubitem = false 
+	
+block meta
+	title= title_page
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+	<script type="text/javascript" id="www-widgetapi-script" src="https://s.ytimg.com/yts/jsbin/www-widgetapi-vflS50iB-/www-widgetapi.js" async=""></script>
+	<script src="https://www.youtube.com/player_api"></script>
+	script(defer src='./assets/scripts/index.js')
+	script(defer src='./assets/scripts/video.js')
+block content
+	.video-content
+		include ../includes/breadcrumbs.pug
+		.video-block
+			.video-block-wrap
+				div(class="video-block-slider-big js-video-block-slider-big")
+				.video-block-slider.js-video-block-slider
+
+
+
+block footer
+	include ../includes/footer.pug
+
+block header
+

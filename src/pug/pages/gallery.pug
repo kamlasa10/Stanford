@@ -1,0 +1,74 @@
+extends ../layout/main
+block variable
+	-
+		var title_page = 'Галерея'
+		var id_page = 'gallery-page'
+		var breadcrumbsBtn = 'none'
+		var breadcrumbsSubitem = false
+	
+block meta
+	title= title_page
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+	script(defer src='./assets/scripts/index.js')
+	script(defer src='./assets/scripts/gallery.js')
+block content
+	.gallery-content
+		include ../includes/breadcrumbs.pug
+		.preview
+			.gallery-pagination-arrows.gallery-sl-arrows
+				button(type="button").button.button-reset--default-styles.gallery-pagination-arrow.gallery-pagination-arrow__prev.js-preview-arrow__prev
+					+svg('arrow-link')
+				button(type="button").button.button-reset--default-styles.gallery-pagination-arrow.gallery-pagination-arrow__next.js-preview-arrow__next
+					+svg('arrow-link')
+			button(class="btn button-reset--default-styles js-popup-close preview__btn")
+				+svg('close')
+			.preview__slider
+				.gallery-main-slider__item
+					+img('home/1.jpg')
+				.gallery-main-slider__item
+					+img('home/2.jpg')
+				.gallery-main-slider__item
+					+img('home/3.jpg')
+				.gallery-main-slider__item
+					+img('home/3.jpg')
+				.gallery-main-slider__item
+					+img('home/3.jpg')
+
+		.gallery-block
+			.gallery-main-slider.js-gallery-main-slider
+				.gallery-main-slider__item
+					+img('home/1.jpg')
+				.gallery-main-slider__item
+					+img('home/2.jpg')
+				.gallery-main-slider__item
+					+img('home/3.jpg')
+				.gallery-main-slider__item
+					+img('home/3.jpg')
+				.gallery-main-slider__item
+					+img('home/3.jpg')
+				
+			.gallery-mini-slider.js-gallery-mini-slider
+				.gallery-mini-slider__item
+					+img('home/1.jpg')
+				.gallery-mini-slider__item
+					+img('home/2.jpg')
+				.gallery-mini-slider__item
+					+img('home/3.jpg')
+				.gallery-mini-slider__item
+					+img('home/3.jpg')
+				.gallery-mini-slider__item
+					+img('home/3.jpg')
+				
+			.gallery-pagination-arrows.gallery-sl-arrows
+				button(type="button").button.button-reset--default-styles.gallery-pagination-arrow.gallery-pagination-arrow__prev.js-video-arrow__prev
+					+svg('arrow-link')
+				button(type="button").button.button-reset--default-styles.gallery-pagination-arrow.gallery-pagination-arrow__next.js-video-arrow__next
+					+svg('arrow-link')
+block footer
+	include ../includes/footer.pug
+
+block header
+

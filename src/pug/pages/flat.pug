@@ -1,0 +1,98 @@
+extends ../layout/main
+block variable
+	-
+		var title_page = 'Квартира 2А'
+		var id_page = 'flat-page'
+		var breadcrumbsBtn = 'filter'
+		var breadcrumbsSubitem = [
+			{
+				label: 'Вибір за секції',
+				link: pagesLink[0].gen
+			},
+			{
+				label: 'План поверху',
+				link: pagesLink[0].floorPlan
+			}
+		]
+	
+block meta
+	title= title_page
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+	script(defer src='./assets/scripts/index.js')
+	script(defer src='./assets/scripts/flat.js')
+block content
+	.floor-plan-content
+		include ../includes/breadcrumbs.pug
+		.filter-plan-block-infomob
+			.flat-site-wrap
+				.section-title
+					.section-title__num 4
+					.section-title__text секція
+				.section-title
+					.section-title__num 10
+					.section-title__text поверх
+			a(href="#" ).flat-back-btn.flat-back__btn
+				+svg('arrow').flat-back-btn__icon
+				.flat-back-btn__text.underline_2 назад на план поверху
+		.filter-plan-block
+			.filter-plan-block__l
+				.flat-site-wrap
+					.section-title
+						.section-title__num 4
+						.section-title__text секція
+					.section-title
+						.section-title__num 10
+						.section-title__text поверх
+				.section-plan
+					.section-plan__img
+						include ../includes/plan-floor.svg
+					.section-plan__text План поверху
+				.section-compass
+					+img('compass.svg').section-compass__img
+				a(href="#" download).flat-back-btn
+					+svg('arrow').flat-back-btn__icon
+					.flat-back-btn__text.underline_2 назад на план поверху
+			.filter-plan-block__c
+				.flat__img
+					+img('temp/0.jpg')
+
+			.filter-plan-block__r
+				.flat-info
+					.flat-info__title Квартира №14
+					ul.flat-info-main-prop.list-prop
+						li.flat-info-main-prop-item.list-prop-item
+							span.flat-info-main-prop-item__key.list-prop-item__key Загальна площа:
+							span.flat-info-main-prop-item__val.list-prop-item__list 115.78 м
+								span.sup 2
+						li.flat-info-main-prop-item.list-prop-item
+							span.flat-info-main-prop-item__key.list-prop-item__key Житлова площа:
+							span.flat-info-main-prop-item__val.list-prop-item__list 15.78 м
+								span.sup 2
+					ul.flat-info-prop.list-prop.custom-scroll
+						each v in [1,1,1,1,1,1,1]
+							li.flat-info-prop-item.list-prop-item
+								span.flat-info-prop-item__key.list-prop-item__key Передпокій:
+								span.flat-info-prop-item__val.list-prop-item__list 15.78 м
+									span.sup 2
+				button(type="button").flat-call-btn.js-call-popup
+					.flat-call-btn__text дізнатись ціну
+					+svg('arrow').flat-call-btn__icon
+				a(href="#" download).flat-download-btn
+					+svg('pdf').flat-download-btn__icon
+					.flat-download-btn__text.underline_2 заванатижи pdf
+				a(href="#" ).flat-back-btn.flat-back__btn-nav
+					+svg('arrow').flat-back-btn__icon
+					.flat-back-btn__text.underline_2 назад на план поверху
+				
+block footer
+	include ../includes/footer.pug
+
+					
+					
+
+
+block header
+

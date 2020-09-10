@@ -1,0 +1,88 @@
+extends ../layout/main
+block variable
+	-
+		var title_page = 'Хід будівництва'
+		var id_page = 'stage-page'
+		var breadcrumbsBtn = 'news'
+		var breadcrumbsSubitem = false
+	
+block meta
+	title= title_page
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+	script(defer src='./assets/scripts/index.js')
+	script(defer src='./assets/scripts/stage.js')
+block content
+	.stage-modal.custom-scroll.js-stage-modal
+		button(type="button").stage-modal__close-btn.js-stage-modal__close-btn
+			+svg('close-stage')
+			span Закрити
+		.news-single-block
+			.preloader-image-wrap.js-preloader-image-wrap
+				+img('preloader.svg').preloader-image
+			.news-single-block__l
+				.news-single-slider.js-news-single-slider
+					.news-single-slider__item
+						+img('temp/11.jpg')
+					.news-single-slider__item
+						+img('temp/news.png')
+					.news-single-slider__item
+						+img('temp/news.png')
+					.news-single-slider__item
+						+img('temp/news.png')
+				.gallery-pagination-arrows.news-single-arrows
+					button(type="button").button.button-reset--default-styles.gallery-pagination-arrow.gallery-pagination-arrow__prev.js-single-news-arrow__prev
+						+svg('arrow-link')
+					button(type="button").button.button-reset--default-styles.gallery-pagination-arrow.gallery-pagination-arrow__next.js-single-news-arrow__next
+						+svg('arrow-link')
+			.news-single-block__r.js-news-single-block__r
+				h2.news-single__title Вересень 2019
+				
+				.custom-scroll.news-single-text-block
+					p Збираєтесь відвідати наш відділ продажу? Телефонуйте за номером, вказаним на сайті та замовляйте трансфер прямісінько до дверей офісу. Для вашої зручності до POLARIS Home&Plaza курсують автомобілі — у будні з 9.00 до 19.00, у вихідні з 10.00 до 18.00.
+					p Збираєтесь відвідати наш відділ продажу? Телефонуйте за номером, вказаним на сайті та замовляйте трансфер прямісінько до дверей офісу. Для вашої зручності до POLARIS Home&Plaza курсують автомобілі — у будні з 9.00 до 19.00, у вихідні з 10.00 до 18.00.
+					p Збираєтесь відвідати наш відділ продажу? Телефонуйте за номером, вказаним на сайті та замовляйте трансфер прямісінько до дверей офісу. Для вашої зручності до POLARIS Home&Plaza курсують автомобілі — у будні з 9.00 до 19.00, у вихідні з 10.00 до 18.00.
+					p Ми — за чисте довкілля та збереження природних ресурсів, саме тому для трансферу обрали екологічні електрокари Nissan LEAF.
+					p Чекаємо на вас за адресою: Харківське шосе, 22 км, щоб детальніше розповісти про проект, допомогти вам обрати планування квартири та влаштувати екскурсію мальовничою локацією POLARIS Home&Plaza.
+
+			
+	.stage-content
+		include ../includes/breadcrumbs.pug
+		.stage-block
+			//- .year-block
+			//- 	h4.year-title 2020
+			//- 	.year-slider-wrap
+			//- 		.year-slider.js-year-slider
+			//- 			each i in [81,1,1,1,11,1]
+			//- 				.year-slider-item.year-slider__item
+			//- 					.year-slider-item__img
+			//- 						+img('temp/stage.jpg')
+			//- 					h5.year-slider-item__title Вересень 2019
+			//- 						+svg('plus')
+			//- 		.gallery-pagination-arrows.stage-arrows
+			//- 			button(type="button").button.button-reset--default-styles.gallery-pagination-arrow.gallery-pagination-arrow__prev.js-stage-arrow__prev
+			//- 				+svg('arrow-link')
+			//- 			button(type="button").button.button-reset--default-styles.gallery-pagination-arrow.gallery-pagination-arrow__next.js-stage-arrow__next
+			//- 				+svg('arrow-link')
+			.year-block
+				h4.year-title 2020
+				.year-slider-wrap
+					.year-slider.js-year-slider
+						each i in [81,1,1,1,11,1]
+							.year-slider-item.year-slider__item.js-year-slider__item
+								.year-slider-item__img
+									+img('temp/stage.jpg')
+								h5.year-slider-item__title Вересень 2019
+									+svg('plus')
+					.gallery-pagination-arrows.stage-arrows
+						button(type="button").button.button-reset--default-styles.gallery-pagination-arrow.gallery-pagination-arrow__prev.js-stage-arrow__prev
+							+svg('arrow-link')
+						button(type="button").button.button-reset--default-styles.gallery-pagination-arrow.gallery-pagination-arrow__next.js-stage-arrow__next
+							+svg('arrow-link')
+block footer
+	include ../includes/footer.pug
+
+block header
+

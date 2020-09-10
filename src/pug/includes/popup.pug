@@ -1,0 +1,101 @@
+// blur for slider and popup modal effect start
+
+svg.visually-hidden.filters(xmlns="http://www.w3.org/2000/svg" version="1.1")
+	defs
+		filter#blur
+			fegaussianblur(in="SourceGraphic" stddeviation="0,0")
+
+// blur for slider and popup modal effect end
+// popup start
+.modal-overlay.js-modal-overlay
+.modal-wrapper
+.popup-call.js-blur.js-modal
+	button(type="button").button-reset--default-styles.popup-close.popup-call__close.js-close-btn
+		+svg('close').popup-close__icon
+	+img('popup_overlay.jpg').popup-call__bg-overlay
+	.popup-call__title-wrap
+		h5.popup-call__title Наш менеджер зв'яжеться з вами у зручний час
+		span.popup-call-notice замовити дзвінок
+	
+	form(autocomplete="off").main-form#call-form.call-form
+		.main-form-block.requaired
+			input(name="name" type="text" data-rule="empty").main-form__input.main-form__input-requaired.js-main-form__input
+			span( data-defaultMessage="Ваше ім'я:*" data-errorMessage="Ваше ім'я не заповнено:").main-form-content
+				span.main-form__text Iм'я:*
+		.main-form-block.requaired.main-form-block--margin-bottom
+			input(name="tel" type="text" data-rule="empty").main-form__input.main-form__input-requaired.js-main-form__input
+			span( data-defaultMessage="Введіть телефон:*" data-errorMessage="Телефон: не заповнено:").main-form-content
+				span.main-form__text Телефон:*
+		.radio-block
+			input#time_1.js-time-call(type="radio" value="0" name="time_call" checked)
+			label(for="time_1") Зателефонуйте зараз
+		.radio-block
+			input#time_2.js-time-call(type="radio" value="1" name="time_call")
+			label(for="time_2") Вказати зручний час
+		.main-form-block.requaired.main-form-block__data-time.js-main-form-block__data-time
+			input(name="time" type="text" data-rule="empty").main-form__input.js-main-form__input.js-datetimepicker_dark
+			span(data-type="tel" data-defaultMessage="Вказати зручний час" data-errorMessage="Час не заповнено:").main-form-content
+				span.main-form__text Вказати зручний час
+
+		button(type="submit").button-reset--default-styles.section-link.popup-call__submit-btn
+				span.section-link__text відправити
+				+svg('arrow-link').section-link__icon
+// popup end
+// menu start
+.menu.js-menu
+	+svg('circ_logo').main-overlay__icon-logo
+	button(type="button").button-reset--default-styles.popup-close.menu__close.js-close-menu-btn
+		+svg('close').popup-close__icon
+	h4.menu__title
+		span.menu__title-wrap
+			span.js-menu__title-text Меню
+			+svg('sign')
+	.menu-list.custom-scroll
+		.menu-item-wrap
+			.menu-item
+				h4.menu-item__title.menu-item-title Про комплекс
+				ul.submenu-item
+					li.submenu__item
+						a(href= pagesLink[0].philosophy) Філософія Stanford
+					li.submenu__item
+						a(href= pagesLink[0].feature) Технічні характеристики
+					li.submenu__item
+						a(href= pagesLink[0].gallery) Галерея
+					li.submenu__item
+						a(href= pagesLink[0].video) Відео
+					li.submenu__item
+						a(href= pagesLink[0].stage) Хід будівництва
+			.menu-item
+				h4.menu-item__title.menu-item-title Вібір квартири
+				ul.submenu-item
+					li.submenu__item
+						a(href= pagesLink[0].floorPlan) Вибір за поверхом
+					li.submenu__item
+						a(href= pagesLink[0].filter) Підбір по параметрам
+		.menu-item-wrap
+			ul.submenu-main-link
+				li.submenu-main-link__item
+					a(href= href= pagesLink[0].infrastructure).menu-item-title Інфраструктура
+				li.submenu-main-link__item
+					a(href= href= pagesLink[0].documents).menu-item-title Документи
+				li.submenu-main-link__item
+					a(href= href= pagesLink[0].news).menu-item-title Новини
+				li.submenu-main-link__item
+					a(href= href= pagesLink[0].developer).menu-item-title Девелопер
+				li.submenu-main-link__item
+					a(href= href= pagesLink[0].contact).menu-item-title Контакти
+
+	.menu-foter
+		a(href="#").menu__footer-link.footer-link.gsap-footer-stagger
+			+svg('map').footer-link__icon
+			span.footer-link__text Київ, Предславинська, 35
+		span.menu-footer-line.gsap-footer-stagger
+		a(href="tel:1234567890").menu__footer-link.footer-link.gsap-footer-stagger
+			+svg('phone_1').footer-link__icon
+			span.footer-link__text +1 234 567 8900
+		span.menu-footer-line.gsap-footer-stagger
+		a(href="#").menu__footer-link.footer-link.menu__footer-link-social.gsap-footer-stagger
+			+svg('insta').footer-link__icon
+		a(href="#").menu__footer-link.footer-link.menu__footer-link-social.gsap-footer-stagger
+			+svg('facebook').footer-link__icon
+// menu end

@@ -1,0 +1,398 @@
+/**********************************/
+/*
+* feature start
+*/
+#feature-page {
+	position: fixed;
+	.section-footer:not(#Y) {
+		position: relative;
+		max-width: none;
+	}
+	
+	.footer-logo {
+		display: flex;
+	}
+}
+
+
+#feature-page .breadcrumbs {
+	margin: 0 0 68px 0;
+	@include to(768px){
+		margin: 0 0 45px 0;
+	}
+	@include from(1441px){
+		margin: 0 0 95px 0;
+		
+	}
+}
+
+
+
+
+.filosof-btn{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	@include from(1441px){
+		//display: none;
+	}
+	@include to(768px){
+		display: none;
+	}
+	&__text{
+		font-size: min(vw(16), 16px);
+		letter-spacing: 0.04em;
+		text-decoration-line: underline;
+		text-transform: uppercase;
+		color: #CE8163;
+		@include to(1440px){
+			font-size: 14px;
+		}
+		@include to(1280px){
+			font-size: 12px;
+		}
+	}
+}
+.stage-modal__close-btn{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	@include to(1280px){
+
+		flex-direction: row-reverse;
+	}
+	svg{
+		min-width: 60px;
+		min-height: 60px;
+		@include to(475px){
+			width: 47px;
+			min-width: auto;
+			height: 47px;
+			min-height: auto;
+
+		}
+	}
+	span{
+		font-weight: 500;
+		font-size: 10px;
+		line-height: 24px;
+		display: flex;
+		align-items: center;
+		text-transform: uppercase;
+		color: #706A75;
+		@include to(1280px){
+			padding: 0 10px;
+		}
+	}
+}
+
+.nav-menu-button__icon line:nth-child(1),
+.nav-menu-button__icon line:nth-child(2) {
+	stroke: #2F2536
+}
+.dark .nav-menu-button__icon line:nth-child(1),
+.dark .nav-menu-button__icon line:nth-child(2) {
+	stroke: #FFF0E0
+}
+
+.dark:not(#contact-page) .desktop-header {
+	background-color: #34293D;
+}
+
+.dark .footer-link__text,
+.dark .footer-logo__text
+ {
+	color: #706A75;
+}
+.section-footer__logo svg{
+	width: 100%;
+	height: 100%;
+	fill: #C2BFC4;
+}
+.dark .section-footer__logo svg{
+	fill: #706A75;
+}
+.dark .underline_2::before{
+	background-color: #FFF0E0;
+	height: 1px;
+}
+
+.dark .our-text {
+	fill: #FFF0E0;
+}
+
+
+.dark .main-title,
+.dark .phone-link__text {
+	color: #FFF0E0;
+}
+.dark,
+.dark .desktop-nav,
+.dark .desktop-nav-btn,
+.dark .lang-list__item:nth-child(1)
+{
+	background-color: #34293D;
+}
+
+
+
+.feature-list{
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 5.6%;
+	@include to(1440px){
+		margin-bottom: 7%;
+
+	}
+	@include to(992px){
+		
+		margin-bottom: 12%;
+	}
+	@include to(576px){
+		flex-direction: column;
+		align-items: center;
+		margin-bottom: 50px;
+	}
+}
+.feature-item{
+	padding: 0 8% min(vw(100), 100px);
+	width: 50%;
+	display: flex;
+	align-items: flex-start;
+	@include to(768px){
+		padding: 0 8% 80px;
+	}
+	@include to(576px){
+		padding: 0 0 50px 0;
+		width: 80%;
+		justify-content: center;
+	}
+	@include to(475px){
+		width: 100%;
+	}
+	&:nth-child(odd){
+		border-right: 1.6px solid #42344A;
+		justify-content: flex-end;
+		@include to(992px){
+			padding-left: 0;
+		}
+		@include to(576px){
+			border-right: none;
+			justify-content: center;
+
+		}
+	}
+	&:nth-child(even){
+		@include to(992px){
+			padding-right: 0;
+		}
+	}
+	&:last-child{
+		padding-bottom: 0;
+	}
+	.feature-item-wrap{
+		width: 315px;
+		display: flex;
+		flex-direction: column;
+		@include to(576px){
+			width: 260px;
+		}
+	}
+	&__img{
+		margin-right: 70px;
+		width: 60px;
+		height: 60px;
+		min-width: 60px;
+		min-height: 60px;
+		@include to(1440px){
+			width: 50px;
+			height: 50px;
+			min-width: 50px;
+			min-height: 50px;
+			margin-right: 45px;
+		}
+		@include to(768px){
+			margin-right: 38px;
+		}
+		img{
+			object-fit: contain;
+		}
+	}
+	&__title{
+		margin-bottom: 18px;
+		font-family: $default-font2;
+		font-size: min(1.55vw, 28px);
+		line-height: 0.9em;
+		color: #FFF0E0;
+		@include to(1440px){
+			font-size: 22px;
+			margin-bottom: 12px;
+		}
+		@include to(768px){
+			line-height: 1.1em;
+		}
+		@include to(700px){
+			font-size: 20px;
+		}
+	}
+	&__text{
+		line-height: 1.7em;
+		font-size: min(0.95vw, 18px);
+		color: #B2AEB5;
+		@include to(1440px){
+			font-size: 14px;
+		}
+	}
+}
+.our-text{
+	fill: #000;
+}
+
+
+.feature-banner-btn{
+	display: flex;
+	align-items: center;
+	margin-left: auto;
+	text-decoration: none;
+	min-width: 250px;
+	@include to(576px){
+		align-self: center;
+		margin-top: 22px;
+		margin-left: 0;
+	justify-content: center;
+	}
+	span{
+		margin: 0 16px;
+		font-family: $default-font2;
+		font-size: min(1.05vw, 20px);
+		display: flex;
+		align-items: center;
+		text-align: right;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: #CE8163;
+		@include to(1440px){
+			font-size: 16px;
+		}
+		@include to(576px){
+			font-size: 14px;
+		}
+	}
+		svg {
+			width: 20px;
+			height: 19px;
+			fill: #FFF0E0;
+			stroke: #FFF0E0;
+		}
+}
+
+.feature-banner{
+	margin: 0 9% 50px;
+	width: 100%;
+	max-width: 1200px;
+	padding: 42px 6%;
+	background: #2F2536;
+	display: flex;
+	align-items: center;
+	@include to(1440px){
+		margin: 0 9.5% 50px;
+	}
+	@include to(992px){
+		margin: 0 4% 50px;
+	}
+	@include to(700px){
+		margin: 0 0 50px;
+	}
+	@include to(576px){
+		flex-direction: column;
+	}
+	&-wrap{
+		display: flex;
+		justify-content: center;
+	}
+	&__title{
+		padding: 0 15px;
+		width: 50%;
+		font-family: $default-font2;
+		font-size: min(2.25vw, 42px);
+		line-height: 1.4em;
+		color: #FFF0E0;
+		@include to(1440px){
+			font-size: 28px;
+		}
+		@include to(700px){
+			font-size: 24px;
+		}
+		@include to(576px){
+			font-size: 20px;
+			width: 100%;
+			text-align: center;
+		}
+	}
+}
+
+
+.features {
+	&__indicator {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		position: absolute;
+		top: 20%;
+		right: 45px;
+
+		@include to(850px) {
+			right: 0;
+		}
+
+		@include to(480px) {
+			right: 25px;
+		}
+
+		&-mouse {
+			margin-bottom: 15px;
+			width: 17px;
+			height: 26px;
+		}
+
+		&-arrow {
+			width: 6px;
+			height: 62px;
+		}
+	}
+}
+
+
+
+
+
+
+.feature-content {
+	position: relative;
+	transition: all 0.4s;
+	margin-left: 74px;
+	padding: 120px 45px 0 0px;
+	
+	@include to(1020px) {
+		margin-left: 0px;
+		padding: 120px 20px 0;
+	}
+
+	@include to(576px) {
+		padding: 80px 20px 0;
+	}
+}
+	/*
+* feature end
+*/
+/**********************************/
+
+
+
+.section__first .section-footer__logo:not(#h){
+	@include to(475px){
+		order: 1;
+		margin: 0;
+		width: 127px;
+	}
+}

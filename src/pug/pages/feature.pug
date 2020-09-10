@@ -1,0 +1,89 @@
+extends ../layout/main
+block variable
+	-
+		var title_page = 'Технічні характеристики'
+		var id_page = 'feature-page'
+		var class_page = 'dark'
+		var breadcrumbsBtn = 'feature'
+		var breadcrumbsSubitem = false
+		var feature = [
+			{
+				title: 'Кількість будинків',
+				text: 'Комплекс, до складу якого входять 11 секцій',
+			},
+			{
+				title: 'Опалення',
+				text: 'Індивідуальне на комплекс',
+			},
+			{
+				title: 'Кількість поверхів',
+				text: 'Від 7 до 24-х',
+			},
+			{
+				title: 'Підземний паркінг',
+				text: '5-рівневий, з можливістю заряду електромобілів',
+			},
+			{
+				title: 'Кількість ліфтів',
+				text: '2 на під`їзд, безшумні, швидкісні, Швейцарські ліфти марки Schindler',
+			},
+			{
+				title: 'Оздоблення',
+				text: 'На вибір буде запропоновано варіанти квартир як без оздоблення, так і з оздобленням',
+			},
+			{
+				title: 'Конструкція',
+				text: 'Монолітно-каркасна технологія',
+			},
+			{
+				title: 'Стіни',
+				text: 'Наповнення як внутрішніх так і зовнішніх стін - керамоблок',
+			},
+			{
+				title: 'Фасад',
+				text: 'Навісний, вентильований з керамограніту, клінкерної цегли',
+			},
+			{
+				title: 'Вікна',
+				text: 'Якісні алюмінієві, двокамерні склопакети заповнені аргоном',
+			},
+			{
+				title: 'Система безпеки',
+				text: 'Доступ в комплекс здійснюється тільки з цифровим ключем',
+			},
+		]
+
+	
+block meta
+	title= title_page
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+	script(defer src='./assets/scripts/index.js')
+	script(defer src='./assets/scripts/feature.js')
+block content
+	.feature-content
+		.features__indicator
+			+svg('mouse-scroll').features__indicator-mouse
+			+svg('arrow-fil').features__indicator-arrow
+		include ../includes/breadcrumbs.pug
+		ul.feature-list
+			each val, i in feature
+				li.feature-item
+					.feature-item__img
+						+img('features/'+i+'.png')
+					.feature-item-wrap
+						.feature-item__title= val.title
+						.feature-item__text= val.text
+		.feature-banner-wrap
+			.feature-banner
+				.feature-banner__title Яку саме квартиру Ви шукаєте?
+				a(href="#").feature-banner-btn
+					span.feature-banner-btn__text.underline_2 обрати квартиру
+					+svg('arrow').feature-banner-btn__icon
+block footer
+	include ../includes/footer.pug
+
+block header
+

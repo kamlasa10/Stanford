@@ -1,0 +1,74 @@
+// Global class
+.wow:not(#some){
+	opacity: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+}
+.main-form-block.js-input-focus:not(#g) {
+	.main-form__text {
+		transform: scale(0.7) translate(-100px, -80px);
+		transition: transform .45s ease-in-out;
+		@include to(1440px){
+			transform: scale(0.7) translate(-67px, -60px);
+
+		}
+	}
+}
+.js-no-valid:not(#some)+.main-form-content {
+    svg{
+      fill: red;
+    }
+}
+.js-no-valid:not(#some){
+  border-bottom: 1px solid red;
+}
+
+
+.overflow--hidden:not(#some){
+	overflow: hidden;
+	margin-right: 10px;
+}
+
+.color--wc{
+  color: $wc;
+}
+.color--bc{
+  color: $bc;
+}
+.color--mc{
+  color: $mc;
+}
+
+.fill--mc svg {
+	fill: $mc;
+}
+
+.button-reset--default-styles{
+  font-family: $default-font;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  transition: all 0.3s;
+}
+
+.button--reset{
+  font-family: $default-font;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  transition: all 0.3s;
+}
+.button--res{
+  font-family: $default-font;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+}

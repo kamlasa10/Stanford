@@ -1,0 +1,267 @@
+extends ../layout/main
+block variable
+	-
+		var title_page = 'Новини';
+		var id_page = 'news-page';
+		var breadcrumbsBtn = 'doc';
+		var breadcrumbsSubitem = false;
+	
+block meta
+	title= title_page
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+	script(defer src='./assets/scripts/index.js')
+	script(defer src='./assets/scripts/news.js')
+block content
+	.news-content
+		include ../includes/breadcrumbs.pug
+		.news-filter
+			+SelectBox('year', 'year', [
+				{
+					name: 'Рiк',
+					value: 'null'
+				},
+				{
+					name: '2020',
+					value: '2020'
+				},
+				{
+					name: '2019',
+					value: '2019'
+				},
+			])
+			+SelectBox('month', 'month', [
+				{
+					name: 'Mісяць',
+					value: 'null'
+				},
+				{
+					value: '0',
+					name: 'Січень',
+				},
+
+				{
+					value: '1',
+					name: 'Лютий',
+				},
+
+				{
+					value: '2',
+					name: 'Березень',
+				},
+
+				{
+					value: '3',
+					name: 'Квітень',
+				},
+
+				{
+					value: '4',
+					name: 'Травень',
+				},
+
+				{
+					value: '5',
+					name: 'Червень',
+				},
+
+				{
+					value: '6',
+					name: 'Липень',
+				},
+
+				{
+					value: '7',
+					name: 'Серпень',
+				},
+
+				{
+					value: '8',
+					name: 'Вересень',
+				},
+
+				{
+					value: '9',
+					name: 'Жовтень',
+				},
+
+				{
+					value: '10',
+					name: 'Листопад',
+				},
+
+				{
+					value: '11',
+					name: 'Грудень',
+				}
+			])
+		.news-block-wrap
+			.news-block
+				
+				// start
+				a(data-year="2019" data-month="11" href=pagesLink[0].news_single).card.js-news-card
+					.card-img-wrap
+						.hover-overlay
+							include ../../assets/images/logo_hover.svg
+						+img('lorem/1.jpg').card__img
+						.card-data-wrap.card-data
+							+svg('data').card-data__icon
+							time.card-data__text(pubdate datetime="2012-12-23") 25.03.2019
+					h4.card__title.text-shadow Відділ продажу вже відкрито пиу пиу пиупиу пиу пиу пиупиу пиу пиу пиупиу пиу пиу пиупиу
+					p.card__text Раді повідомити, що відділ продажу ЖК Stanford вже відкрито!Раді повідомити, що відділ продажу...
+					
+					.card__btn.section-link
+						span.section-link__text читати
+						+svg('arrow-link').section-link__icon
+				// end
+				// start
+				a(data-year="2020" data-month="9" href=pagesLink[0].news_single).card.js-news-card
+					.card-img-wrap
+						.hover-overlay
+							include ../../assets/images/logo_hover.svg
+						+img('home/2.jpg').card__img
+						.card-data-wrap.card-data
+							+svg('data').card-data__icon
+							time.card-data__text(pubdate datetime="2012-12-23") 25.03.2019
+					h4.card__title Відділ продажу пиу пиу пиупиу пиу пиу пиупиу пиу пиу пиупиу пиу пиу пиупиу
+					p.card__text відділ продажу...
+					
+					.card__btn.section-link
+						span.section-link__text читати
+						+svg('arrow-link').section-link__icon
+				// end
+				// start
+				a(data-year="2020" data-month="0" href=pagesLink[0].news_single).card.js-news-card
+					.card-img-wrap
+						.hover-overlay
+							include ../../assets/images/logo_hover.svg
+						+img('home/1.jpg').card__img
+						.card-data-wrap.card-data
+							+svg('data').card-data__icon
+							time.card-data__text(pubdate datetime="2012-12-23") 25.03.2019
+					h4.card__title Відділ продажу вже відкрито пиу пиу пиупиу пиу пиу пиупиу пиу пиу пиупиу пиу пиу пиупиу
+					p.card__text вже відкрито!Раді повідомити, що відділ продажу...
+					
+					.card__btn.section-link
+						span.section-link__text читати
+						+svg('arrow-link').section-link__icon
+				// end
+				// start
+				a(data-year="2019" data-month="7" href=pagesLink[0].news_single).card.js-news-card
+					.card-img-wrap
+						.hover-overlay
+							include ../../assets/images/logo_hover.svg
+						+img('home/1.jpg').card__img
+						.card-data-wrap.card-data
+							+svg('data').card-data__icon
+							time.card-data__text(pubdate datetime="2012-12-23") 25.03.2019
+					h4.card__title Відділ продажу вже відкрито пиу пиу пиупиу пиу пиу пиупиу пиу пиу пиупиу пиу пиу пиупиу
+					p.card__text вже відкрито!Раді повідомити, що відділ продажу...
+					
+					.card__btn.section-link
+						span.section-link__text читати
+						+svg('arrow-link').section-link__icon
+				// end
+				// start
+				a(data-year="2020" data-month="7" href=pagesLink[0].news_single).card.js-news-card
+					.card-img-wrap
+						.hover-overlay
+							include ../../assets/images/logo_hover.svg
+						+img('home/1.jpg').card__img
+						.card-data-wrap.card-data
+							+svg('data').card-data__icon
+							time.card-data__text(pubdate datetime="2012-12-23") 25.03.2019
+					h4.card__title Відділ продажу вже відкрито пиу пиу пиупиу пиу пиу пиупиу пиу пиу пиупиу пиу пиу пиупиу
+					p.card__text вже відкрито!Раді повідомити, що відділ продажу...
+					
+					.card__btn.section-link
+						span.section-link__text читати
+						+svg('arrow-link').section-link__icon
+				// end
+				// start
+				a(data-year="2019" data-month="7" href=pagesLink[0].news_single).card.js-news-card
+					.card-img-wrap
+						.hover-overlay
+							include ../../assets/images/logo_hover.svg
+						+img('lorem/1.jpg').card__img
+						.card-data-wrap.card-data
+							+svg('data').card-data__icon
+							time.card-data__text(pubdate datetime="2012-12-23") 25.03.2019
+					h4.card__title.text-shadow Відділ продажу вже відкрито пиу пиу пиупиу пиу пиу пиупиу пиу пиу пиупиу пиу пиу пиупиу
+					p.card__text Раді повідомити, що відділ продажу ЖК Stanford вже відкрито!Раді повідомити, що відділ продажу...
+					
+					.card__btn.section-link
+						span.section-link__text читати
+						+svg('arrow-link').section-link__icon
+				// end
+				// start
+				a(data-year="2020" data-month="2" href=pagesLink[0].news_single).card.js-news-card
+					.card-img-wrap
+						.hover-overlay
+							include ../../assets/images/logo_hover.svg
+						+img('home/2.jpg').card__img
+						.card-data-wrap.card-data
+							+svg('data').card-data__icon
+							time.card-data__text(pubdate datetime="2012-12-23") 25.03.2019
+					h4.card__title Відділ продажу пиу пиу пиупиу пиу пиу пиупиу пиу пиу пиупиу пиу пиу пиупиу
+					p.card__text відділ продажу...
+					
+					.card__btn.section-link
+						span.section-link__text читати
+						+svg('arrow-link').section-link__icon
+				// end
+				// start
+				a(data-year="2020" data-month="3" href=pagesLink[0].news_single).card.js-news-card
+					.card-img-wrap
+						.hover-overlay
+							include ../../assets/images/logo_hover.svg
+						+img('home/1.jpg').card__img
+						.card-data-wrap.card-data
+							+svg('data').card-data__icon
+							time.card-data__text(pubdate datetime="2012-12-23") 25.03.2019
+					h4.card__title Відділ продажу вже відкрито пиу пиу пиупиу пиу пиу пиупиу пиу пиу пиупиу пиу пиу пиупиу
+					p.card__text вже відкрито!Раді повідомити, що відділ продажу...
+					
+					.card__btn.section-link
+						span.section-link__text читати
+						+svg('arrow-link').section-link__icon
+				// end
+				// start
+				a(data-year="2020" data-month="3" href=pagesLink[0].news_single).card.js-news-card
+					.card-img-wrap
+						.hover-overlay
+							include ../../assets/images/logo_hover.svg
+						+img('home/1.jpg').card__img
+						.card-data-wrap.card-data
+							+svg('data').card-data__icon
+							time.card-data__text(pubdate datetime="2012-12-23") 25.03.2019
+					h4.card__title Відділ продажу вже відкрито пиу пиу пиупиу пиу пиу пиупиу пиу пиу пиупиу пиу пиу пиупиу
+					p.card__text вже відкрито!Раді повідомити, що відділ продажу...
+					
+					.card__btn.section-link
+						span.section-link__text читати
+						+svg('arrow-link').section-link__icon
+				// end
+				// start
+				a(data-year="2020" data-month="4" href=pagesLink[0].news_single).card.js-news-card
+					.card-img-wrap
+						.hover-overlay
+							include ../../assets/images/logo_hover.svg
+						+img('home/1.jpg').card__img
+						.card-data-wrap.card-data
+							+svg('data').card-data__icon
+							time.card-data__text(pubdate datetime="2012-12-23") 25.03.2019
+					h4.card__title Відділ продажу вже відкрито пиу пиу пиупиу пиу пиу пиупиу пиу пиу пиупиу пиу пиу пиупиу
+					p.card__text вже відкрито!Раді повідомити, що відділ продажу...
+					
+					.card__btn.section-link
+						span.section-link__text читати
+						+svg('arrow-link').section-link__icon
+				// end
+block footer
+	include ../includes/footer.pug
+
+block header
+

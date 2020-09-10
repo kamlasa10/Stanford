@@ -1,0 +1,30 @@
+.breadcrumbs
+	ul.breadcrumbs-list
+		li
+			h1.main-title= title_page
+		li.breadcrumbs-item
+			a(href="/").breadcrumbs-item__link.underline_2 Головна
+		if breadcrumbsSubitem
+			each v in breadcrumbsSubitem
+				li.breadcrumbs-item
+					a(href= v.link).breadcrumbs-item__link.underline_2= v.label
+
+		
+		li.breadcrumbs-item
+			span.breadcrumbs-item__current.breadcrumbs-item__link--color= title_page
+	if breadcrumbsBtn == 'filter'
+		include ./btn-filter.pug
+	if breadcrumbsBtn == 'feature'
+		include ./btn-filosof.pug
+	if breadcrumbsBtn == 'doc'
+		include ./btn-doc.pug
+	if breadcrumbsBtn == 'gal'
+		include ./btn-gal.pug
+	if breadcrumbsBtn == 'news'
+		include ./btn-news.pug
+	if breadcrumbsBtn == 'news_s'
+		include ./btn-news_s.pug
+	if breadcrumbsBtn == 'philosophy'
+		include ./btn-news.pug
+	if breadcrumbsBtn === 'web-camera'
+		include ./btn-web-camera

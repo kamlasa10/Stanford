@@ -1,0 +1,426 @@
+
+#news-page {
+	.section-footer:not(#Y) {
+		position: relative;
+		max-width: none;
+	}
+	
+	.footer-logo {
+		display: flex;
+	}
+}
+
+
+#news-page .breadcrumbs {
+	margin: 0 0 18px 0;
+}
+
+.news-content {
+	transition: all 0.4s;
+	margin-left: 66px;
+	padding: 120px 45px 0 0px;
+	box-shadow: 11px 1px 30px rgba(177, 177, 177, 0.37);
+	
+	@include to(1020px) {
+		margin-left: 0px;
+		padding: 120px 20px 0;
+	}
+	
+	@include to(576px) {
+		padding: 80px 20px 0;
+	}
+}
+.news-block-wrap {
+	padding: 29px 0px 50px 45px;
+	@include to(1020px){
+		padding: 29px 0px 50px 0px;
+	}
+	@include to(768px){
+		padding: 29px 80px 50px 80px;
+
+	}
+	@include to(668px){
+		padding: 29px 40px 50px 40px;
+
+	}
+	@include to(576px){
+		padding: 29px 0px 50px 0px;
+
+	}
+	.news-block {
+
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: -40px;
+		margin-right: -40px;
+		@include to(1440px){
+			margin-left: -20px;
+			margin-right: -20px;
+		}
+		@include to(470px){
+			justify-content: center;
+		}
+
+	}
+
+	.card{
+		min-width: auto;
+		margin-bottom: 80px;
+		width: calc(33.33% - 80px);
+		@include to(1440px){
+			margin-bottom: 50px;
+			width: calc(33.33% - 40px);
+
+		}
+		@include to(768px){
+			width: calc(50% - 40px);
+			
+		}
+		@include to(470px){
+			width: calc(75% - 40px);
+
+		}
+		@include to(425px){
+			width: calc(100% - 40px);
+
+		}
+	}
+}
+
+
+
+
+
+
+
+
+/**********************************/
+/*
+* news end
+*/
+.doc-btn{
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	.filosof-btn__text{
+		text-decoration: none;
+
+	}
+	span::before{
+		transform: scale(1);
+		background-color: $mc3;
+	}
+	@include to(576px){
+		display: none;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**********************************/
+/*
+* news start
+*/
+
+
+
+
+/*
+* select start
+*/
+.u-select-box {
+	position: relative;
+	display: block;
+	width: 100%;
+	margin: 0 auto;
+	font-family: $default-font2;
+	font-size: min(vw(28), 28px);
+	@include to(1440px){
+		font-size: 22px;
+	}
+	@include to(666px){
+		font-size: 20px;
+	}
+	color: #1D2228;
+	@include from(769px) {
+		&:hover {
+			box-shadow: 0px 4px 30px rgba(177, 177, 177, 0.25);
+			.u-select-box__input-text {
+				background-color: #9A959E;
+				color: #fff0e0;
+			}
+			.u-select-box__icon {
+				fill: #fff0e0;
+				stroke: #fff0e0;
+			}
+			.u-select-box__current {
+				border-color: transparent;
+			}
+
+			.u-select-box__current+.u-select-box__list {
+				opacity: 1;
+				// padding-top: 20px;
+				// margin-top: -15px;
+				z-index: 2;
+				// position: relative;
+				// background-color: var(--white);
+				// We have to set "animation-name: none;" to make the list visible (read below how it works)
+				animation-name: none;
+				transition: .5s;
+
+				.u-select-box__option {
+					cursor: pointer;
+				}
+			}
+
+			.u-select-box__icon {
+				transform: translateY(-50%) rotate(180deg);
+				// fill: var(--red);
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.u-select-box__current {
+	position: relative;
+	cursor: pointer;
+	outline: none;
+}
+
+.u-select-box__current:focus .u-select-box__input-text {
+		background-color: #9A959E;
+		color: #fff0e0;
+}
+.u-select-box__current:focus .u-select-box__icon {
+		fill: #fff0e0;
+		stroke: #fff0e0;
+}
+
+
+
+.u-select-box__current:focus+.u-select-box__list {
+	opacity: 1;
+	animation-name: none;
+}
+
+.u-select-box__current:focus+.u-select-box__list .u-select-box__option {
+	cursor: pointer;
+}
+
+.u-select-box__current:focus .u-select-box__icon {
+	transform: translateY(-50%) rotate(180deg);
+}
+
+.u-select-box__icon {
+	position: absolute;
+	top: 50%;
+	right: 15px;
+	transform: translateY(-50%);
+	width: 20px;
+	transition: 0.2s ease;
+	fill: none;
+}
+
+.u-select-box__value {
+	display: flex;
+}
+
+.u-select-box__input {
+	display: none;
+}
+
+.u-select-box__input:checked+.u-select-box__input-text {
+	display: block;
+}
+
+.u-select-box__input-text {
+	transition: all 0.3s;
+	border-radius: 0;
+	display: none;
+	width: 100%;
+	margin: 0;
+	padding: 15px;
+	font-family: $default-font2;
+	color: $mc3;
+}
+
+
+.u-select-box__list {
+	position: absolute;
+	z-index: 5;
+	width: 100%;
+	padding: 0;
+	list-style: none;
+	opacity: 0;
+	border-radius: 0 0 23px 23px;
+	overflow: hidden;
+	animation-name: HideList;
+	animation-duration: 0.5s;
+	animation-delay: 0.5s;
+	animation-fill-mode: forwards;
+	animation-timing-function: step-start;
+	background: #FFFFFC;
+	
+}
+
+.u-select-box__option {
+	display: block;
+	padding: 10px 15px;
+	background-color: #fff;
+	transition: all 0.3s;
+	color: #9A959E;
+	font-size: 18px;
+	font-family: $default-font;
+}
+
+.u-select-box__option:hover,
+.u-select-box__option:focus {
+	color: $mc3;
+	background-color: #fffffc;
+}
+
+@keyframes HideList {
+	from {
+		transform: scaleY(1);
+	}
+
+	to {
+		transform: scaleY(0);
+	}
+}
+
+/*
+* select end
+*/
+
+
+
+
+
+.u-select-box__list {
+	padding: 10px 0;
+	border-radius: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.news-filter {
+	display: flex;
+	align-items: center;
+	padding-left: 45px;
+	@include to(1020px){
+		padding-left: 0px;
+	}
+	@include to(576px){
+		justify-content: space-between;
+	}
+	div.u-select-box:first-child {
+		width: 100px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+.u-select-box__icon{
+	width: 8px;
+	height: 16px;
+	fill: $mc3;
+	stroke: $mc3;
+}
+
+
+.u-select-box{
+	margin: 0;
+	width: 155px;
+	margin-right: 75px;
+	@include to(576px){
+		width: 40%;
+		margin-right: 0;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

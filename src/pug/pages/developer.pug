@@ -1,0 +1,32 @@
+extends ../layout/main
+block variable
+	-
+		var title_page = 'Девелопер'
+		var id_page = 'developer-page'
+		var class_page = 'dark'
+		var breadcrumbsSubitem = false
+	
+block meta
+	title= title_page
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+	script(defer src='./assets/scripts/index.js')
+block content
+	.developer-content
+		include ../includes/breadcrumbs.pug
+		.develop-block
+			.develop-block-l
+				.develop-block__img
+					+img('logo-perfect.svg')
+				p.develop-block__subtitle Perfect Group - бренд, під ім'ям якого об'єднано 30 компаній, що мають багатий актив успішно реалізованих проектів в галузі нерухомості.
+			.develop-block-r
+				p.develop-block__text Окремі компанії, в яких працюють фахівці різних напрямків будівництва, становлять групу повного циклу, що дозволяє Perfect Group виконувати всі будівельні та супровідні роботи. За 28 років роботи компанією побудовано 92 житлових будинки. У 2019 Perfect Group увійшла до рейтингу ТОП-10 забудовників Києва за кількістю реалізованих об'єктів.
+				p.develop-block__text В бізнес-портфелі компанії є як самостійні, так і партнерські проекти, серед яких такі преміальні об'єкти як: “The Garden”, “Kandinsky”, “Французький квартал”, “Рибальський”. У Perfect Group працюють з переконанням: «Все повинно бути «Perfect», тобто ідеально.
+				a(href="https://perfect-group.ua/ua/" rel="nofollow" target="_blank").underline_2.develop-block__link сайт забудовника
+block footer
+	include ../includes/footer.pug
+
+block header
+

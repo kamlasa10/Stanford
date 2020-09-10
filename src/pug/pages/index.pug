@@ -1,0 +1,248 @@
+extends ../layout/main
+block variable
+
+	
+block meta
+	title Home
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+	script(defer src='./assets/scripts/index.js')
+	script(defer src='./assets/scripts/home.js')
+block content
+
+
+	section.section.section__first.section-slaider
+		span.overlay.overlay__1
+		span.overlay.overlay__2
+		span.overlay.anim-overlay__1
+		span.overlay.anim-overlay__2
+		.section-footer.section-slaider-footer
+			.section-footer__logo
+				+img('logo-perfect.svg')
+			a(href="#").section-footer__link.footer-link
+				+svg('map').footer-link__icon
+				span.footer-link__text Київ, Предславинська, 35 
+		.main-overlay
+			include ../../assets/images/nav-logo_u.svg
+			+svg('circ_logo').main-overlay__icon-logo
+			include ../../assets/images/home/log_arr.svg
+			p.main-overlay__text Новий квартал в діловому центрі столиці на Печерську
+		.main-slaider
+			.main-slaider__item
+				.slaider-title
+					span.word-wrapper.slaider-title__top
+						span.word-animate Бізнес класика
+					span.wrap-additional
+						span.wrap-additional__line
+						span.word-wrapper.slaider-title__bottom
+							span.word-animate на Печерську
+				.slider-img
+					+img('home/1.jpg')
+			.main-slaider__item
+				.slaider-title
+					span.word-wrapper.slaider-title__top
+						span.word-animate класика Бізнес
+					span.wrap-additional
+						span.wrap-additional__line
+						span.word-wrapper.slaider-title__bottom
+							span.word-animate Печерську на
+				.slider-img
+					+img('home/2.jpg')
+			.main-slaider__item
+				.slaider-title
+					span.word-wrapper.slaider-title__top
+						span.word-animate 3класика Бізнес
+					span.wrap-additional
+						span.wrap-additional__line
+						span.word-wrapper.slaider-title__bottom
+							span.word-animate Печерську на
+				.slider-img
+					+img('home/2.jpg')
+
+
+		ul.dots
+			li(data-slide="0").dots-item
+				button(type="button").button--reset.dots-btn.dots-btn--active
+					span 01
+					span.line
+			li(data-slide="1").dots-item
+				button(type="button").button--reset.dots-btn
+					span 02
+					span.line
+			li(data-slide="2").dots-item
+				button(type="button").button--reset.dots-btn
+					span 03
+					span.line
+		
+	section(data-home_sec="2").section.section__second.section-second
+		.section-left.section-second-left.section-shadow
+			.section-second-content-wrap
+				h2.stagger-content.section-second__title
+					span Бізнес класика
+						+svg('sign')
+					span на Печерську
+				p.stagger-content.section-second__text Немає кращого способу вийти на новий рівень, як звернутися до цінностей, перевірених часом. Класику можна успадкувати, але ми обираємо створювати її за власними правилами.
+		.section-right.js-grid__item-img(data-intensity="0.7" data-easing="Power2.easeOut" data-displacement="assets/images/displacement/1.jpg")
+			span.section__img-overlay
+			+img('home/third.jpg').section-second__img.displacement__img
+			+img('home/sec.jpg').section-second__img.displacement__img
+	section(data-home_sec="3").section.section__third.section-third
+		.section-left.section-third-left
+			+img('home/th.svg').section-third-bgc-overlay
+			.section-third-content-wrap
+				h2.section-third__subtitle Stanford – вибір тих, хто вже досяг гармонії та успіху, але завжди прагне більшого.
+				p.section-third__text Це стан душі і особливий настрій, мистецтво стильного і витонченого буття. Унікальна для центру міста оаза спокою, де ніщо не може відволікати від речей, що дійсно важливі.
+				a(href="#").section-third__link.section-link
+					span.section-link__text більше про проект
+					+svg('arrow-link').section-link__icon
+		.section-right.js-grid__item-img(data-intensity="0.7" data-easing="Power2.easeOut" data-displacement="assets/images/displacement/1.jpg")
+			span.section__img-overlay
+			+img('home/sec.jpg').section-third__img.displacement__img
+			+img('home/third.jpg').section-third__img.displacement__img
+	section(data-home_sec="4").section.section__third.section-four
+		.section-four-bg.js-grid__item-img(data-imagesRatio="0.5" data-intensity="0.7" data-easing="Power2.easeOut" data-displacement="assets/images/displacement/13.jpg")
+			+img('home/2.jpg').section-four__overlay-bg.displacement__img
+			+img('home/2.jpg').section-four__overlay-bg.displacement__img
+		.section-four-content
+			+svg('circ_logo').main-overlay__icon-logo
+			.content-block-1.content-block
+				h4(class="js-data-four_stagger").content-block-1__title Преміальна локація
+				p(class="js-data-four_stagger").content-block-1__text.content-text Витонченість, шляхетність, відмінна транспортна доступність - три кити Печерську, відомого своїми елітними житловими будинками, престижними закладами, насиченою інфраструктурою.
+			.content-block-2
+				.content-block-2-wrap
+					h4(class="js-data-four_stagger").content-block-2__title Місцерозташування
+					p(class="js-data-four_stagger").content-block-2__text.content-text Stanford знаходиться на перетині вулиць Предславинської та Коновальця, біля Національного палацу мистецтв «Україна» і Костелу Святого Миколая.
+				a(href="#").content-block-2__link гугл карти
+			ul.features
+				li.features-item
+					span.features-item__num.js_num_1 5
+					span.features-item__desc хв. до метро Олімпійська
+				li.features-item
+					span.features-item__num.js_num_2 17
+					span.features-item__desc хв. до ТЦ “Ocean Plaza”
+				li.features-item
+					span.features-item__num.js_num_3 10
+					span.features-item__desc хв. до історичних об'єктів
+	section.section.section__five
+		.content-section-height-section__five.gallery
+			ul.gallery-pictures
+				li.gallery-picture
+					+img('home/3.jpg')
+				li.gallery-picture
+					+img('home/2.jpg')
+				li.gallery-picture
+					+img('home/1.jpg')
+			.gallery-pagination
+				button(type="button").button.button-reset--default-styles.gallery-pagination-dot.gallery-pagination-dot-selected
+				button(type="button").button.button-reset--default-styles.gallery-pagination-dot
+				button(type="button").button.button-reset--default-styles.gallery-pagination-dot
+		.gallery-pagination-arrows
+			button(type="button").button.button-reset--default-styles.gallery-pagination-arrow.gallery-pagination-arrow__next.js-gallery-pagination-arrow__next
+				+svg('arrow-link')
+			button(type="button").button.button-reset--default-styles.gallery-pagination-arrow.gallery-pagination-arrow__prev.js-gallery-pagination-arrow__prev
+				+svg('arrow-link')
+		a(href="#").section-five__link.section-link
+			span.section-link__text більше фото
+			+svg('arrow-link').section-link__icon
+	section(data-home_sec="6").section.section__six
+		a(href='https://smarto.agency/' rel="nofollow" target="_blank").footer-logo
+			img(src='./assets/images/smarto.svg' alt="" title="")
+		.section-shadow.content-section-height
+			+svg('circ_logo').section__six-icon-logo
+			h2.section-title Новини
+			.row-items
+				// start
+				a(href="#").card
+					.card-img-wrap
+						.hover-overlay
+							include ../../assets/images/logo_hover.svg
+						+img('lorem/1.jpg').card__img
+						.card-data-wrap.card-data
+							+svg('data').card-data__icon
+							time.card-data__text(pubdate datetime="2012-12-23") 25.03.2019
+					h4.card__title.text-shadow Відділ пиупиу пиупиу пиупиу пиупиу пиупиу продажу вже відкрито
+					p.card__text Раді повідомити, що відділ продажу ЖК Stanford вже відкрито!Раді повідомити, що відділ продажу...
+					
+					.card__btn.section-link
+						span.section-link__text читати
+						+svg('arrow-link').section-link__icon
+				// end
+				// start
+				a(href="#").card
+					.card-img-wrap
+						.hover-overlay
+							include ../../assets/images/logo_hover.svg
+						+img('home/2.jpg').card__img
+						.card-data-wrap.card-data
+							+svg('data').card-data__icon
+							time.card-data__text(pubdate datetime="2012-12-23") 25.03.2019
+					h4.card__title Відділ продажу
+					p.card__text відділ продажу...
+					
+					.card__btn.section-link
+						span.section-link__text читати
+						+svg('arrow-link').section-link__icon
+				// end
+				// start
+				a(href="#").card
+					.card-img-wrap
+						.hover-overlay
+							include ../../assets/images/logo_hover.svg
+						+img('home/1.jpg').card__img
+						.card-data-wrap.card-data
+							+svg('data').card-data__icon
+							time.card-data__text(pubdate datetime="2012-12-23") 25.03.2019
+					h4.card__title Відділ продажу вже відкрито
+					p.card__text вже відкрито!Раді повідомити, що відділ продажу...
+					
+					.card__btn.section-link
+						span.section-link__text читати
+						+svg('arrow-link').section-link__icon
+				// end
+				// start
+				a(href="#").card
+					.card-img-wrap
+						.hover-overlay
+							include ../../assets/images/logo_hover.svg
+						+img('home/1.jpg').card__img
+						.card-data-wrap.card-data
+							+svg('data').card-data__icon
+							time.card-data__text(pubdate datetime="2012-12-23") 25.03.2019
+					h4.card__title Відділ продажу вже відкрито кеку укекуе укеукек укеукеу укеук
+					p.card__text вже відкрито!Раді повідомити, що відділ продажу...
+					
+					.card__btn.section-link
+						span.section-link__text читати
+						+svg('arrow-link').section-link__icon
+				// end
+				// start
+				a(href="#").card
+					.card-img-wrap
+						.hover-overlay
+							include ../../assets/images/logo_hover.svg
+						+img('home/1.jpg').card__img
+						.card-data-wrap.card-data
+							+svg('data').card-data__icon
+							time.card-data__text(pubdate datetime="2012-12-23") 25.03.2019
+					h4.card__title Відділ продажу вже відкрито
+					p.card__text вже відкрито!Раді повідомити, що відділ продажу...
+					
+					.card__btn.section-link
+						span.section-link__text читати
+						+svg('arrow-link').section-link__icon
+				// end
+			.row-items.news-nav-link-wrap
+				a(href="#").all-news.section-link.news-nav-link__goup.news-nav-link
+					+svg('arrow-link').section-link__icon
+					span.section-link__text Повернутись ВГОРУ
+				a(href="#").all-news.section-link.news-nav-link.news-nav-link--ml
+					span.section-link__text всі новини
+					+svg('arrow-link').section-link__icon
+	
+block footer
+	include ../includes/footer.pug
+
+block header
+
